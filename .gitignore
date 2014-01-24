@@ -1,0 +1,8 @@
+*.user
+*~
+*.autosave
+CMakeCache.txt
+CMakeFiles
+*.so
+*.cmake
+Makefile

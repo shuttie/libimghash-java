@@ -1,0 +1,12 @@
+Source: libimghash-java
+Section: libs
+Priority: extra
+Maintainer: Roman Grebennikov <grebennikov.roman@gmail.com>
+Build-Depends: imagemagick, libmagick++-dev, cmake, debhelper (>= 8.0.0), libimghash, openjdk-7-jdk
+Standards-Version: 3.9.3
+
+Package: libimghash-java
+Section: libs
+Architecture: any
+Depends: imagemagick (>= 6.6), libmagick++5, libmagick++-dev, libimghash, openjdk-7-jdk
+Description: libimghash java binding
