@@ -31,6 +31,19 @@
                     <descriptorRef>jar-with-dependencies</descriptorRef>
                 </descriptorRefs>
 
+		<dependencySet>
+    			<outputDirectory>lib/native</outputDirectory>
+			<outputFileNameMapping>${artifact.artifactId}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
+    			<unpack>false</unpack>
+    			<useProjectArtifact>false</useProjectArtifact>
+    			<useStrictFiltering>false</useStrictFiltering>
+    			<includes>
+        			<include>*:*:dll:*</include>
+        			<include>*:*:so:*</include>
+        			<include>*:*:jnilib:*</include>
+    			</includes>
+		</dependencySet>  
+
                 </configuration>
                 <executions>
                     <execution>
