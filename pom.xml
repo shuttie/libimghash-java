@@ -4,7 +4,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.sociohub</groupId>
+    <groupId>ru.sociohub</groupId>
     <artifactId>imghash</artifactId>
     <packaging>jar</packaging>
     <version>0.1.5-CURRENT</version>

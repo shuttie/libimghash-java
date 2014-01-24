@@ -6,7 +6,7 @@
  * the SWIG interface file instead.
  * ----------------------------------------------------------------------------- */
 
-package com.sociohub.imghash;
+package ru.sociohub.imghash;
 
 public class imghashJNI {
 

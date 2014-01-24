@@ -219,7 +219,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jobject JNICALL Java_com_sociohub_imghash_imghashJNI_imghash_1buffer(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2) {
+SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1buffer(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2) {
   jobject jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int arg2 ;
@@ -256,7 +256,7 @@ SWIGEXPORT jobject JNICALL Java_com_sociohub_imghash_imghashJNI_imghash_1buffer(
 }
 
 
-SWIGEXPORT jobject JNICALL Java_com_sociohub_imghash_imghashJNI_imghash_1file(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1file(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jobject jresult = 0 ;
   char *arg1 = (char *) 0 ;
   unsigned long long result;
@@ -291,7 +291,7 @@ SWIGEXPORT jobject JNICALL Java_com_sociohub_imghash_imghashJNI_imghash_1file(JN
 }
 
 
-SWIGEXPORT jstring JNICALL Java_com_sociohub_imghash_imghashJNI_imghash_1file_1hex(JNIEnv *jenv, jclass jcls, jstring jarg1) {
+SWIGEXPORT jstring JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1file_1hex(JNIEnv *jenv, jclass jcls, jstring jarg1) {
   jstring jresult = 0 ;
   char *arg1 = (char *) 0 ;
   char *result = 0 ;

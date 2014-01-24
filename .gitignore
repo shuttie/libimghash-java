@@ -7,3 +7,5 @@ CMakeFiles
 *.cmake
 Makefile
 target
+.idea
+*.iml
