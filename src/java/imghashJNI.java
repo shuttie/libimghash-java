@@ -11,7 +11,7 @@ public class imghashJNI {
 
   static {
     try {
-        System.loadLibrary("libimghash-java.so");
+        System.loadLibrary("module");
     } catch (UnsatisfiedLinkError e) {
       System.err.println("Native code library failed to load. \n" + e);
       System.exit(1);
