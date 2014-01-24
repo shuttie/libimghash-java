@@ -9,10 +9,11 @@ FIND_PACKAGE(ImageMagick COMPONENTS Magick++ REQUIRED)
 include_directories("${ImageMagick_INCLUDE_DIRS}")
 include_directories("${JNI_INCLUDE_DIRS}")
 include_directories("/usr/include/imghash")
-aux_source_directory(./src/c SRC_LIST)
+aux_source_directory(./jni SRC_LIST)
 add_definitions("-DMAGICKCORE_QUANTUM_DEPTH=8" "-DMAGICKCORE_HDRI_ENABLE=0")
-add_library(imghash-java SHARED src/c/imghash_wrap.cxx)
-target_link_libraries(imghash-java ${JNI_LIBRARIES} ${ImageMagick_LIBRARIES})
+add_library(imghash-java SHARED jni/imghash_wrap.cxx)
+SET_TARGET_PROPERTIES(imghash-java PROPERTIES LINK_FLAGS "-Wl,--as-needed")
+target_link_libraries(imghash-java ${JNI_LIBRARIES} ${ImageMagick_LIBRARIES} /usr/lib/libimghash.so)
 
 install(TARGETS imghash-java
     LIBRARY DESTINATION lib

@@ -5,14 +5,15 @@
 %}
 
 %pragma(java) jniclasscode=%{
-  static {
-    try {
-        System.loadLibrary("module");
-    } catch (UnsatisfiedLinkError e) {
-      System.err.println("Native code library failed to load. \n" + e);
-      System.exit(1);
+    static {
+        try {
+            NativeLoader loader = new NativeLoader();
+            loader.loadLibrary("imghash-java");
+        } catch (UnsatisfiedLinkError e) {
+            System.err.println("Native code library failed to load. \n" + e);
+            System.exit(1);
+        }
     }
-  }
 %}
 
 extern unsigned long long imghash_buffer(char* buffer, int bufferSize);

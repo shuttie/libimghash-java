@@ -10,14 +10,15 @@ package ru.sociohub.imghash;
 
 public class imghashJNI {
 
-  static {
-    try {
-        System.loadLibrary("module");
-    } catch (UnsatisfiedLinkError e) {
-      System.err.println("Native code library failed to load. \n" + e);
-      System.exit(1);
+    static {
+        try {
+            NativeLoader loader = new NativeLoader();
+            loader.loadLibrary("imghash-java");
+        } catch (UnsatisfiedLinkError e) {
+            System.err.println("Native code library failed to load. \n" + e);
+            System.exit(1);
+        }
     }
-  }
 
   public final static native java.math.BigInteger imghash_buffer(String jarg1, int jarg2);
   public final static native java.math.BigInteger imghash_file(String jarg1);
