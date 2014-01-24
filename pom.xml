@@ -22,40 +22,6 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-
-		<dependencySet>
-    			<outputDirectory>lib/native</outputDirectory>
-			<outputFileNameMapping>${artifact.artifactId}${dashClassifier?}.${artifact.extension}</outputFileNameMapping>
-    			<unpack>false</unpack>
-    			<useProjectArtifact>false</useProjectArtifact>
-    			<useStrictFiltering>false</useStrictFiltering>
-    			<includes>
-        			<include>*:*:dll:*</include>
-        			<include>*:*:so:*</include>
-        			<include>*:*:jnilib:*</include>
-    			</includes>
-		</dependencySet>  
-
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>everything</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
-            </plugin>
         </plugins>
 
     </build>
