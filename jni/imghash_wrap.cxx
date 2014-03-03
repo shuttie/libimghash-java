@@ -219,7 +219,7 @@ static void SWIGUNUSED SWIG_JavaThrowException(JNIEnv *jenv, SWIG_JavaExceptionC
 extern "C" {
 #endif
 
-SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1buffer(JNIEnv *jenv, jclass jcls, jstring jarg1, jint jarg2) {
+SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1buffer(JNIEnv *jenv, jclass jcls, jbyteArray jarg1) {
   jobject jresult = 0 ;
   char *arg1 = (char *) 0 ;
   int arg2 ;
@@ -227,12 +227,15 @@ SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1buffer(J
   
   (void)jenv;
   (void)jcls;
-  arg1 = 0;
-  if (jarg1) {
-    arg1 = (char *)jenv->GetStringUTFChars(jarg1, 0);
-    if (!arg1) return 0;
+  {
+    if (jarg1) {
+      arg1 = (char *) jenv->GetByteArrayElements(jarg1, 0);
+      arg2 = (size_t) jenv->GetArrayLength(jarg1);
+    } else {
+      arg1 = 0;
+      arg2 = 0;
+    }
   }
-  arg2 = (int)jarg2; 
   result = (unsigned long long)imghash_buffer(arg1,arg2);
   {
     jbyteArray ba = jenv->NewByteArray(9);
@@ -251,7 +254,10 @@ SWIGEXPORT jobject JNICALL Java_ru_sociohub_imghash_imghashJNI_imghash_1buffer(J
     bigint = jenv->NewObject(clazz, mid, ba);
     jresult = bigint;
   }
-  if (arg1) jenv->ReleaseStringUTFChars(jarg1, (const char *)arg1);
+  {
+    if (jarg1) jenv->ReleaseByteArrayElements(jarg1, (jbyte *)arg1, 0);
+  }
+  
   return jresult;
 }
 

@@ -9,8 +9,8 @@
 package ru.sociohub.imghash;
 
 public class imghash {
-  public static java.math.BigInteger imghash_buffer(String buffer, int bufferSize) {
-    return imghashJNI.imghash_buffer(buffer, bufferSize);
+  public static java.math.BigInteger imghash_buffer(byte[] buffer) {
+    return imghashJNI.imghash_buffer(buffer);
   }
 
   public static java.math.BigInteger imghash_file(String fileName) {

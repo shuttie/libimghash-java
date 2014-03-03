@@ -20,7 +20,7 @@ public class imghashJNI {
         }
     }
 
-  public final static native java.math.BigInteger imghash_buffer(String jarg1, int jarg2);
+  public final static native java.math.BigInteger imghash_buffer(byte[] jarg1);
   public final static native java.math.BigInteger imghash_file(String jarg1);
   public final static native String imghash_file_hex(String jarg1);
 }
